@@ -5,7 +5,7 @@
   "name": "XUCore Net5 WebApi",
   "identity": "XUCore.Net5.WebApi",
   "groupIdentity": "XUCore.Net5.WebApi",
-  "shortName": "XUcore-Net5-WebApi",
+  "shortName": "XUCore-Net5-WebApi",
   "tags": {
     "language": "C#",
     "type": "project"
