@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "XUCore",
+  "classifications": [ "XUCore.Net5.WebApi" ],
+  "name": "XUCore Net5 WebApi",
+  "identity": "XUCore.Net5.WebApi",
+  "groupIdentity": "XUCore.Net5.WebApi",
+  "shortName": "XUcore-Net5-WebApi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "XUCore.Net5.Template",
+  "preferNameDirectory": true
+}

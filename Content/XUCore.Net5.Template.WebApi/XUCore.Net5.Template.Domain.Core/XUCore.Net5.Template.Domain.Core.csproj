@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DocumentationFile>XUCore.Net5.Template.Domain.Core.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="XUCore.Ddd.Domain" Version="5.1.4" />
+		<PackageReference Include="XUCore.NetCore" Version="5.1.4" />
+		<PackageReference Include="XUCore.NetCore.AspectCore" Version="5.1.4" />
+		<PackageReference Include="XUCore.NetCore.Data" Version="5.1.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="XUCore.Net5.Template.Domain.Core.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>

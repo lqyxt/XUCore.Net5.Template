@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XUCore.Net5.Template.Applaction</name>
+    </assembly>
+    <members>
+        <member name="M:XUCore.Net5.Template.Applaction.Common.AppService.Success``1(System.String,System.String,``0)">
+            <summary>
+            返回成功消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subCode"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.Common.AppService.Success``1(XUCore.Net5.Template.Domain.Core.SubCode,``0)">
+            <summary>
+            返回成功消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subCode"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.Common.AppService.Success``1(XUCore.Net5.Template.Domain.Core.SubCode,System.String,``0)">
+            <summary>
+            返回成功消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subCode"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.Common.AppService.Fail``1(System.String,System.String,``0)">
+            <summary>
+            返回失败消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subCode"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.Common.AppService.Fail``1(XUCore.Net5.Template.Domain.Core.SubCode,System.String,``0)">
+            <summary>
+            返回失败消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subCode"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.Common.AppService.Fail``1(XUCore.Net5.Template.Domain.Core.SubCode,``0)">
+            <summary>
+            返回失败消息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subCode"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService">
+            <summary>
+            管理员管理
+            </summary>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.CreateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserCreateCommand,System.Threading.CancellationToken)">
+            <summary>
+            创建管理员账号
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdateInfoCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新账号信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdatePasswordCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新密码
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdateFieldCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新指定字段内容
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdateStatusCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新状态
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.DeleteUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserDeleteCommand,System.Threading.CancellationToken)">
+            <summary>
+            删除账号（物理删除）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryDetail,System.Threading.CancellationToken)">
+            <summary>
+            获取账号信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryByAccount,System.Threading.CancellationToken)">
+            <summary>
+            获取账号信息（根据账号或手机号码）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserAnyByAccount,System.Threading.CancellationToken)">
+            <summary>
+            检查账号或者手机号是否存在
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryPaged,System.Threading.CancellationToken)">
+            <summary>
+            获取账号分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.CreateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserRelevanceRoleCommand,System.Threading.CancellationToken)">
+            <summary>
+            账号关联角色
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryRoleKeys,System.Threading.CancellationToken)">
+            <summary>
+            获取账号关联的角色id集合
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.CreateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleCreateCommand,System.Threading.CancellationToken)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleUpdateCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新角色信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleUpdateFieldCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新角色指定字段内容
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleUpdateStatusCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新角色状态
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.DeleteRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleDeleteCommand,System.Threading.CancellationToken)">
+            <summary>
+            删除角色（物理删除）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryDetail,System.Threading.CancellationToken)">
+            <summary>
+            获取角色信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryAll,System.Threading.CancellationToken)">
+            <summary>
+            获取所有角色
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryPaged,System.Threading.CancellationToken)">
+            <summary>
+            获取角色分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryMenuKeys,System.Threading.CancellationToken)">
+            <summary>
+            获取角色关联的所有导航id集合
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.CreateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuCreateCommand,System.Threading.CancellationToken)">
+            <summary>
+            创建导航
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuUpdateCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新导航信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuUpdateFieldCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新导航指定字段内容
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.UpdateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuUpdateStatusCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新导航状态
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.DeleteMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuDeleteCommand,System.Threading.CancellationToken)">
+            <summary>
+            删除导航（物理删除）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuQueryDetail,System.Threading.CancellationToken)">
+            <summary>
+            获取导航信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuQueryByTree,System.Threading.CancellationToken)">
+            <summary>
+            获取导航树形结构
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminAppService.GetMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuQueryByWeight,System.Threading.CancellationToken)">
+            <summary>
+            获取导航分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService">
+            <summary>
+            管理员登录接口
+            </summary>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.Login(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserLoginCommand,System.Threading.CancellationToken)">
+            <summary>
+            登录
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.VerifyTokenAsync(System.Threading.CancellationToken)">
+            <summary>
+            验证Token
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.GetPermissionAsync(XUCore.Net5.Template.Domain.Sys.Permission.PermissionQueryExists,System.Threading.CancellationToken)">
+            <summary>
+            查询是否有权限
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.GetPermissionAsync(XUCore.Net5.Template.Domain.Sys.Permission.PermissionQueryMenu,System.Threading.CancellationToken)">
+            <summary>
+            查询权限导航
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.GetPermissionAsync(XUCore.Net5.Template.Domain.Sys.Permission.PermissionQueryMenuExpress,System.Threading.CancellationToken)">
+            <summary>
+            查询权限导航（快捷导航）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.GetRecordAsync(XUCore.Net5.Template.Domain.Sys.LoginRecord.LoginRecordQueryList,System.Threading.CancellationToken)">
+            <summary>
+            获取最近登录记录
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Applaction.AdminUsers.Interfaces.IAdminLoginAppService.GetRecordAsync(XUCore.Net5.Template.Domain.Sys.LoginRecord.LoginRecordQueryPaged,System.Threading.CancellationToken)">
+            <summary>
+            获取所有登录记录分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XUCore.Net5.Template.Application.Services.AdminAppService">
+            <summary>
+            管理员管理
+            </summary>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.CreateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserCreateCommand,System.Threading.CancellationToken)">
+            <summary>
+            创建管理员账号
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdateInfoCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新账号信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdatePasswordCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新密码
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdateFieldCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新指定字段内容
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserUpdateStatusCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新状态
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.DeleteUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserDeleteCommand,System.Threading.CancellationToken)">
+            <summary>
+            删除账号（物理删除）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryDetail,System.Threading.CancellationToken)">
+            <summary>
+            获取账号信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryByAccount,System.Threading.CancellationToken)">
+            <summary>
+            获取账号信息（根据账号或手机号码）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserAnyByAccount,System.Threading.CancellationToken)">
+            <summary>
+            检查账号或者手机号是否存在
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryPaged,System.Threading.CancellationToken)">
+            <summary>
+            获取账号分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.CreateUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserRelevanceRoleCommand,System.Threading.CancellationToken)">
+            <summary>
+            账号关联角色
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetUserAsync(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserQueryRoleKeys,System.Threading.CancellationToken)">
+            <summary>
+            获取账号关联的角色id集合
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.CreateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleCreateCommand,System.Threading.CancellationToken)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleUpdateCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新角色信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleUpdateFieldCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新角色指定字段内容
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleUpdateStatusCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新角色状态
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.DeleteRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleDeleteCommand,System.Threading.CancellationToken)">
+            <summary>
+            删除角色（物理删除）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryDetail,System.Threading.CancellationToken)">
+            <summary>
+            获取角色信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryAll,System.Threading.CancellationToken)">
+            <summary>
+            获取所有角色
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryPaged,System.Threading.CancellationToken)">
+            <summary>
+            获取角色分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetRoleAsync(XUCore.Net5.Template.Domain.Sys.AdminRole.AdminRoleQueryMenuKeys,System.Threading.CancellationToken)">
+            <summary>
+            获取角色关联的所有导航id集合
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.CreateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuCreateCommand,System.Threading.CancellationToken)">
+            <summary>
+            创建导航
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuUpdateCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新导航信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuUpdateFieldCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新导航指定字段内容
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.UpdateMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuUpdateStatusCommand,System.Threading.CancellationToken)">
+            <summary>
+            更新导航状态
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.DeleteMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuDeleteCommand,System.Threading.CancellationToken)">
+            <summary>
+            删除导航（物理删除）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuQueryDetail,System.Threading.CancellationToken)">
+            <summary>
+            获取导航信息
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuQueryByTree,System.Threading.CancellationToken)">
+            <summary>
+            获取导航树形结构
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminAppService.GetMenuAsync(XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuQueryByWeight,System.Threading.CancellationToken)">
+            <summary>
+            获取导航分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XUCore.Net5.Template.Application.Services.AdminLoginAppService">
+            <summary>
+            管理员登录接口
+            </summary>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.Login(XUCore.Net5.Template.Domain.Sys.AdminUser.AdminUserLoginCommand,System.Threading.CancellationToken)">
+            <summary>
+            管理员登录
+            </summary>
+            <remarks>
+            初始账号密码：
+                <para>username : admin</para>
+                <para>password : admin</para>
+            </remarks>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.VerifyTokenAsync(System.Threading.CancellationToken)">
+            <summary>
+            验证Token
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.GetPermissionAsync(XUCore.Net5.Template.Domain.Sys.Permission.PermissionQueryExists,System.Threading.CancellationToken)">
+            <summary>
+            查询是否有权限
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.GetPermissionAsync(XUCore.Net5.Template.Domain.Sys.Permission.PermissionQueryMenu,System.Threading.CancellationToken)">
+            <summary>
+            查询权限导航
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.GetPermissionAsync(XUCore.Net5.Template.Domain.Sys.Permission.PermissionQueryMenuExpress,System.Threading.CancellationToken)">
+            <summary>
+            查询权限导航（快捷导航）
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.GetRecordAsync(XUCore.Net5.Template.Domain.Sys.LoginRecord.LoginRecordQueryList,System.Threading.CancellationToken)">
+            <summary>
+            获取最近登录记录
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XUCore.Net5.Template.Application.Services.AdminLoginAppService.GetRecordAsync(XUCore.Net5.Template.Domain.Sys.LoginRecord.LoginRecordQueryPaged,System.Threading.CancellationToken)">
+            <summary>
+            获取所有登录记录分页
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
