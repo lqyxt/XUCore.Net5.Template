@@ -12,6 +12,11 @@ namespace XUCore.Net5.Template.Domain.Sys.Permission
 {
     public class PermissionQueryData : Command<PermissionViewModel>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<PermissionQueryData>
         {
             public Validator()

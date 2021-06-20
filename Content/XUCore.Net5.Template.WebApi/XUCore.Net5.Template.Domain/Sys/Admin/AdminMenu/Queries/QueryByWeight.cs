@@ -23,6 +23,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminMenu
         [Required]
         public bool IsMenu { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<AdminMenuQueryByWeight>
         {
             public Validator()

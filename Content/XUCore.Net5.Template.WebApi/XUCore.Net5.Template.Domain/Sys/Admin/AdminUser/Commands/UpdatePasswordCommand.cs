@@ -22,6 +22,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
         [Required]
         public string NewPassword { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminUserUpdatePasswordCommand, int, long>
         {
             public Validator()

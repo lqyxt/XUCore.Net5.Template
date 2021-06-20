@@ -16,6 +16,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
     /// </summary>
     public class AdminRoleDeleteCommand : CommandIds<int, long>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdsValidator<AdminRoleDeleteCommand, int, long>
         {
             public Validator()

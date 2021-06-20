@@ -29,6 +29,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
         public long[] RoleIds { get; set; }
 
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<AdminUserRelevanceRoleCommand>
         {
             public Validator()

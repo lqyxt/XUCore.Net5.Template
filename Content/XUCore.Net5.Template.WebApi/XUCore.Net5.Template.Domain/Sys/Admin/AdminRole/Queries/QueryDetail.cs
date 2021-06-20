@@ -15,6 +15,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
     /// </summary>
     public class AdminRoleQueryDetail : CommandId<AdminRoleDto, long>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminRoleQueryDetail, AdminRoleDto, long>
         {
             public Validator()

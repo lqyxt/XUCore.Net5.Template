@@ -37,6 +37,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
         /// </summary>
         public Status Status { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandPageValidator<AdminRoleQueryPaged, PagedModel<AdminRoleDto>>
         {
             public Validator()

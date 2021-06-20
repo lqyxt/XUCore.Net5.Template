@@ -23,6 +23,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
         /// </summary>
         public Status Status { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdsValidator<AdminUserUpdateStatusCommand, int, long>
         {
             public Validator()

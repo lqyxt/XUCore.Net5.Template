@@ -24,6 +24,11 @@ namespace XUCore.Net5.Template.Domain.Sys.LoginRecord
         /// </summary>
         [Required]
         public long AdminId { get; set; }
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
 
         public class Validator : CommandLimitValidator<LoginRecordQueryList, IList<LoginRecordDto>>
         {

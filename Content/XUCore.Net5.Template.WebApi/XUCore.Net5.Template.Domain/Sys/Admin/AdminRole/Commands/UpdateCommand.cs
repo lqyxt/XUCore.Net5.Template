@@ -41,6 +41,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
                 .ForMember(c => c.Updated_At, c => c.MapFrom(s => DateTime.Now))
             ;
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminRoleUpdateCommand, int, long>
         {
             public Validator()

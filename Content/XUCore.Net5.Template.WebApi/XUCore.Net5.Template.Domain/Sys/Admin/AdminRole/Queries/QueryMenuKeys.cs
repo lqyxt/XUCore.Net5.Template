@@ -23,6 +23,20 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
         [Required]
         public long RoleId { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
+
+        public class Validator : CommandValidator<AdminRoleQueryMenuKeys>
+        {
+            public Validator()
+            {
+            }
+        }
+
+
         public class Handler : CommandHandler<AdminRoleQueryMenuKeys, IList<long>>
         {
             private readonly INigelDbRepository db;

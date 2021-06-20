@@ -50,6 +50,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
                 .ForMember(c => c.Company, c => c.MapFrom(s => s.Company.SafeString()))
             ;
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminUserUpdateInfoCommand, int, long>
         {
             public Validator()

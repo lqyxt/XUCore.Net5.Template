@@ -68,6 +68,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
                 .ForMember(c => c.Created_At, c => c.MapFrom(s => DateTime.Now))
             ;
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<AdminUserCreateCommand>
         {
             public Validator()

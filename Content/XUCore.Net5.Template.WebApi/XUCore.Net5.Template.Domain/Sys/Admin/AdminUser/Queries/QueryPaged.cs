@@ -38,6 +38,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
         public Status Status { get; set; }
 
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandPageValidator<AdminUserQueryPaged, PagedModel<AdminUserDto>>
         {
             public Validator()

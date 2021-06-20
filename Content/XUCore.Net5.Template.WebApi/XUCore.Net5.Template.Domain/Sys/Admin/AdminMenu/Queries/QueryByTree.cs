@@ -16,6 +16,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminMenu
     /// </summary>
     public class AdminMenuQueryByTree : Command<IList<AdminMenuTreeDto>>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<AdminMenuQueryByTree>
         {
             public Validator()

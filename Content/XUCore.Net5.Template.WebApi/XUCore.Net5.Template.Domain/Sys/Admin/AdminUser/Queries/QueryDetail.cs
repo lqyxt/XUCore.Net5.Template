@@ -18,6 +18,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
     /// </summary>
     public class AdminUserQueryDetail : CommandId<AdminUserDto, long>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminUserQueryDetail, AdminUserDto, long>
         {
             public Validator()

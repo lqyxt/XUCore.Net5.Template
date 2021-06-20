@@ -39,6 +39,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
             profile.CreateMap<AdminRoleCreateCommand, AdminRoleEntity>()
                 .ForMember(c => c.Created_At, c => c.MapFrom(s => DateTime.Now))
             ;
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
 
         public class Validator : CommandValidator<AdminRoleCreateCommand>
         {

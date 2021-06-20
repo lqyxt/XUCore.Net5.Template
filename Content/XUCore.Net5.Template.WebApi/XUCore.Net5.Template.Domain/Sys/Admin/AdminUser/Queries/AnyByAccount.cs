@@ -31,6 +31,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
         /// </summary>
         public long NotId { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<AdminUserAnyByAccount>
         {
             public Validator()

@@ -30,6 +30,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
         [Required]
         public string Value { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminUserUpdateFieldCommand, int, long>
         {
             public Validator()

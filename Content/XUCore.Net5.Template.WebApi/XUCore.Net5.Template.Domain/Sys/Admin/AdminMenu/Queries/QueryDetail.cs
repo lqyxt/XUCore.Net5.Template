@@ -15,6 +15,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminMenu
     /// </summary>
     public class AdminMenuQueryDetail : CommandId<AdminMenuDto, long>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminMenuQueryDetail, AdminMenuDto, long>
         {
             public Validator()

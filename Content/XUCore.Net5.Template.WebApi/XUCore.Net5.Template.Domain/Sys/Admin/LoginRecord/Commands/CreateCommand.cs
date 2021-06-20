@@ -44,6 +44,11 @@ namespace XUCore.Net5.Template.Domain.Sys.LoginRecord
                 .ForMember(c => c.LoginTime, c => c.MapFrom(s => DateTime.Now))
             ;
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandValidator<LoginRecordCreateCommand>
         {
             public Validator()

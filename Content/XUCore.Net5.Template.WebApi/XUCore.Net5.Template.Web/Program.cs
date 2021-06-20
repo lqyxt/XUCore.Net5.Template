@@ -10,6 +10,7 @@ using System.Security.Authentication;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using XUCore.NetCore.AspectCore.Cache;
 
 namespace XUCore.Net5.Template.Web
 {

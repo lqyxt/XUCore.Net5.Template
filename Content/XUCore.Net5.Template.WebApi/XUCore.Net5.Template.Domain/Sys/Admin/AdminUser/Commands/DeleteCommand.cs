@@ -19,6 +19,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminUser
     /// </summary>
     public class AdminUserDeleteCommand : CommandIds<int, long>
     {
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdsValidator<AdminUserDeleteCommand, int, long>
         {
             public Validator()

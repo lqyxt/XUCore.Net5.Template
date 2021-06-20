@@ -28,6 +28,11 @@ namespace XUCore.Net5.Template.Domain.Sys.AdminRole
         [Required]
         public string Value { get; set; }
 
+        public override bool IsVaild()
+        {
+            ValidationResult = new Validator().Validate(this);
+            return ValidationResult.IsValid;
+        }
         public class Validator : CommandIdValidator<AdminRoleUpdateFieldCommand, int, long>
         {
             public Validator()
