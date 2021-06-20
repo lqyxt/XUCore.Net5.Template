@@ -1,25 +1,24 @@
-using XUCore.Net5.Template.Applaction;
-using XUCore.Net5.Template.Infrastructure;
-using XUCore.Net5.Template.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using XUCore.Net5.Template.Applaction;
+using XUCore.Net5.Template.Infrastructure;
+using XUCore.Net5.Template.Persistence;
 
-namespace XUCore.Net5.Template.WebApi
+namespace XUCore.Net5.Template.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
         public IWebHostEnvironment Environment { get; }
 
-        public const string Project = "api";
+        public const string Project = "mvc";
 
         public void ConfigureServices(IServiceCollection services)
         {

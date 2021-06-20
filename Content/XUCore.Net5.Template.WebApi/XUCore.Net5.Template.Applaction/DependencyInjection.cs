@@ -7,7 +7,7 @@ namespace XUCore.Net5.Template.Applaction
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services, IWebHostEnvironment environment)
+        public static IServiceCollection AddApplication(this IServiceCollection services, IWebHostEnvironment environment, string project = "api")
         {
             services.Scan(scan =>
                 scan.FromAssemblyOf<IAppService>()
@@ -16,14 +16,20 @@ namespace XUCore.Net5.Template.Applaction
                 .WithScopedLifetime()
             );
 
-            services.AddSwagger(environment);
+            if (project == "api")
+            {
+                services.AddSwagger(environment);
+            }
 
             return services;
         }
 
-        public static IApplicationBuilder UseApplication(this IApplicationBuilder app, IWebHostEnvironment environment)
+        public static IApplicationBuilder UseApplication(this IApplicationBuilder app, IWebHostEnvironment environment, string project = "api")
         {
-            app.UseSwagger(environment);
+            if (project == "api")
+            {
+                app.UseSwagger(environment);
+            }
 
             return app;
         }

@@ -28,7 +28,7 @@ namespace XUCore.Net5.Template.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment, string project = "api")
         {
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.All));
 
@@ -90,40 +90,65 @@ namespace XUCore.Net5.Template.Infrastructure
                 };
             });
 
-            services
-               .AddControllers()
-               .AddMessagePackFormatters(options =>
-               {
-                   options.JsonSerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
-                   options.JsonSerializerSettings.ContractResolver = new LimitPropsContractResolver();
+            IMvcBuilder mvcBuilder;
 
-                   //默认设置MessageagePack的日期序列化格式为时间戳，对外输出一致为时间戳的日期，不需要我们自己去序列化，自动操作。
-                   //C#实体内仍旧保持DateTime。跨语言MessageagePack没有DateTime类型。
-                   options.FormatterResolver = MessagePackSerializerResolver.UnixDateTimeFormatter;
-                   options.Options = MessagePackSerializerResolver.UnixDateTimeOptions;
-
-               })
-               .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining(typeof(IMapFrom<>)));
-
-            services.AddDynamicWebApi(options =>
+            if (project.Equals("api"))
             {
-                // 指定全局默认的 api 前缀
-                options.DefaultApiPrefix = "api";
-            });
+                mvcBuilder = services.AddControllers();
+
+                services.AddDynamicWebApi(options =>
+                {
+                    // 指定全局默认的 api 前缀
+                    options.DefaultApiPrefix = "api";
+                });
+            }
+            else
+            {
+                mvcBuilder = services.AddControllersWithViews();
+            }
+
+            mvcBuilder
+                .AddMessagePackFormatters(options =>
+                {
+                    options.JsonSerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+                    options.JsonSerializerSettings.ContractResolver = new LimitPropsContractResolver();
+
+                    //默认设置MessageagePack的日期序列化格式为时间戳，对外输出一致为时间戳的日期，不需要我们自己去序列化，自动操作。
+                    //C#实体内仍旧保持DateTime。跨语言MessageagePack没有DateTime类型。
+                    options.FormatterResolver = MessagePackSerializerResolver.UnixDateTimeFormatter;
+                    options.Options = MessagePackSerializerResolver.UnixDateTimeOptions;
+
+                })
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining(typeof(IMapFrom<>)));
+
 
             //services.AddCacheService<MemoryCacheService>();
 
             return services;
         }
 
-        public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app, IWebHostEnvironment env)
+        public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app, IWebHostEnvironment env, string project = "api")
         {
-            if (env.IsDevelopment())
+            if (project == "api")
             {
-                app.UseDeveloperExceptionPage();
-            }
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
 
-            app.UseStaticFiles();
+                app.UseStaticFiles();
+            }
+            else
+            {
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
+                else
+                {
+                    app.UseExceptionHandler("/Home/Error");
+                }
+            }
 
             app.UseRouting();
 
@@ -133,10 +158,22 @@ namespace XUCore.Net5.Template.Infrastructure
             app.UseStaticHttpContext();
             app.UseStaticFiles();
 
-            app.UseEndpoints(endpoints =>
+            if (project == "api")
             {
-                endpoints.MapControllers();
-            });
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            }
+            else
+            {
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}");
+                });
+            }
 
             return app;
         }
