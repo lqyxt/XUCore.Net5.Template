@@ -13,10 +13,10 @@ XUCore.Net5.Template
 
 ```bash
 
-dotnet new xucore-net5-webapi -n MyTest -o .
+dotnet new xucore-net5-template -n MyTest -o .
 
 ```
 
-这里的 `xucore-net5-webapi` 是使用短名称。
+这里的 `xucore-net5-template` 是使用短名称。
 
 `MyTest` 为新创建的项目名称。
