@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>XUCore.Net5.Template.WebApi</id>
-		<version>0.0.3</version>
+		<version>0.0.4</version>
 		<description>
-			XUCore.Net5.WebApi Ddd Template, including WebApi
+			XUCore.Net5.WebApi Ddd Template, including Web and WebApi
 		</description>
 		<authors>XUCore</authors>
 		<packageTypes>
