@@ -1,7 +1,7 @@
-# XUCore.Net5.Template.WebApi
-XUCore.Net5.Template.WebApi
+# XUCore.Net5.Template
+XUCore.Net5.Template
 
-基于经典ddd的web api代码模板。 
+基于经典ddd的web、api代码模板。 
 
 
 ### 使用模板
@@ -13,10 +13,10 @@ XUCore.Net5.Template.WebApi
 
 ```bash
 
-dotnet new XUCore-Net5-WebApi -n MyTest -o .
+dotnet new xucore-net5-webapi -n MyTest -o .
 
 ```
 
-这里的 `XUCore-Net5-WebApi` 是使用短名称。
+这里的 `xucore-net5-webapi` 是使用短名称。
 
 `MyTest` 为新创建的项目名称。

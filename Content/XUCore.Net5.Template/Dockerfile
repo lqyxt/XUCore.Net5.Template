@@ -20,10 +20,10 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 
 WORKDIR /src
-COPY ["XUCore.Net5.Template.WebApi/XUCore.Net5.Template.WebApi.csproj", "XUCore.Net5.Template.WebApi/"]
-RUN dotnet restore "XUCore.Net5.Template.WebApi/XUCore.Net5.Template.WebApi.csproj"
+COPY ["XUCore.Net5.Template/XUCore.Net5.Template.WebApi.csproj", "XUCore.Net5.Template/"]
+RUN dotnet restore "XUCore.Net5.Template/XUCore.Net5.Template.WebApi.csproj"
 COPY . .
-WORKDIR "/src/XUCore.Net5.Template.WebApi"
+WORKDIR "/src/XUCore.Net5.Template"
 RUN dotnet build "XUCore.Net5.Template.WebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
