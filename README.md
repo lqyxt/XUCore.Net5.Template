@@ -54,7 +54,7 @@ dotnet new xucore-net5-template -n MyTest -o .
 `MyTest` 为新创建的项目名称。
 
 
-![avatar](https://github.com/xuyiazl/XUCore.Net5.Template/blob/main/1.png)
+![avatar](http://www.3624091.com/1.png)
 
 
 ### 本地构建项目镜像到Docker（如果使用jenkins可以直接在jenkins里配置）
