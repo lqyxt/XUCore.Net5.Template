@@ -24,11 +24,16 @@ namespace XUCore.Net5.Template.Web.Controllers
 
         public async Task<IActionResult> IndexAsync()
         {
-            var res = await adminLoginAppService.Login(new Domain.Sys.AdminUser.AdminUserLoginCommand
+            var command = new Domain.Sys.AdminUser.AdminUserLoginCommand
             {
-                Account = "admin",
-                Password = "admin"
-            }, CancellationToken.None);
+                Account = "",
+                Password = ""
+            };
+
+            if (!command.IsVaild())
+            {
+                throw new Exception(command.GetErrors(""));
+            }
 
             return View();
         }
