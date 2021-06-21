@@ -127,8 +127,6 @@ namespace XUCore.Net5.Template.Infrastructure
                 {
                     app.UseDeveloperExceptionPage();
                 }
-
-                app.UseStaticFiles();
             }
             else
             {
