@@ -1,5 +1,6 @@
 # XUCore.Net5.Template
-XUCore.Net5.Template
+
+XUCore.Net5.Template（只使用插件化的框架，不使用集成式框架）
 
 基于经典ddd的web、api代码模板。 
 
