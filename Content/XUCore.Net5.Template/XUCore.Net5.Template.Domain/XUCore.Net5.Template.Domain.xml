@@ -10,7 +10,12 @@
             继承自领域事件和 INotification（也就意味着可以拥有中介的发布/订阅模式）
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:XUCore.Net5.Template.Domain.Notifications.DomainNotificationHandler" -->
+        <member name="T:XUCore.Net5.Template.Domain.Notifications.DomainNotificationHandler">
+            <summary>
+            领域通知处理程序，把所有的通知信息放到事件总线中
+            （用来收集领域的错误信息，但模板中没有使用，默认是在Applaction中使用了SubCode来返回，这个可以自行权衡）
+            </summary>
+        </member>
         <member name="T:XUCore.Net5.Template.Domain.Sys.AdminMenu.AdminMenuCreateCommand">
             <summary>
             创建导航命令

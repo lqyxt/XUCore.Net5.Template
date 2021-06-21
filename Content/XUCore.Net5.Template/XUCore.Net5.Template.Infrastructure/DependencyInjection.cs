@@ -13,9 +13,9 @@ using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using XUCore.Configs;
 using XUCore.Ddd.Domain;
+using XUCore.Ddd.Domain.Bus;
 using XUCore.Net5.Template.Domain.Common.Mappings;
 using XUCore.Net5.Template.Domain.Core;
-using XUCore.Net5.Template.Infrastructure.Bus;
 using XUCore.Net5.Template.Infrastructure.Events;
 using XUCore.NetCore.AspectCore.Cache;
 using XUCore.NetCore.DynamicWebApi;
@@ -45,19 +45,14 @@ namespace XUCore.Net5.Template.Infrastructure
             });
 
             // 命令总线Domain Bus (Mediator)
-            services.AddMediatorBus<InMemoryBus>();
+            services.AddMediatorBus<MediatorMemoryBus>();
 
             // 注入 基础设施层 - 事件溯源
-            //services.AddScoped<IEventStoreRepository, EventStoreSQLRepository>();
             services.AddEventStore<SqlEventStoreService>();
-            //services.AddScoped<EventStoreSQLContext>();
-
-            //services.AddScoped<IUserManager, UserManagerService>();
-
-            //services.AddAuthentication();
 
             // 注入redis插件，支持拦截器缓存
             services.AddRedisService().AddJsonRedisSerializer();
+
             // 注入缓存拦截器（缓存数据用）
             services.AddCacheService<RedisCacheService>((option) =>
             {
@@ -120,9 +115,6 @@ namespace XUCore.Net5.Template.Infrastructure
 
                 })
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining(typeof(IMapFrom<>)));
-
-
-            //services.AddCacheService<MemoryCacheService>();
 
             return services;
         }

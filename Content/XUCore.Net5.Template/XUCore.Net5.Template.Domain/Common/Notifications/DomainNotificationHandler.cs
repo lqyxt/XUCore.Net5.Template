@@ -8,7 +8,7 @@ namespace XUCore.Net5.Template.Domain.Notifications
 {
     /// <summary>
     /// 领域通知处理程序，把所有的通知信息放到事件总线中
-    /// 继承 INotificationHandler<T>
+    /// （用来收集领域的错误信息，但模板中没有使用，默认是在Applaction中使用了SubCode来返回，这个可以自行权衡）
     /// </summary>
     public class DomainNotificationHandler : NotificationEventHandler<DomainNotification>
     {

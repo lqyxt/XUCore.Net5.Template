@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using XUCore.Net5.Template.Applaction.AdminUsers.Interfaces;
+using XUCore.Net5.Template.Domain.Sys.AdminUser;
 using XUCore.Net5.Template.Web.Models;
 
 namespace XUCore.Net5.Template.Web.Controllers
@@ -24,16 +25,20 @@ namespace XUCore.Net5.Template.Web.Controllers
 
         public async Task<IActionResult> IndexAsync()
         {
-            var command = new Domain.Sys.AdminUser.AdminUserLoginCommand
+            //测试接入登录
+
+            var command = new AdminUserLoginCommand
             {
                 Account = "",
                 Password = ""
             };
 
+            //验证命令模型
             if (!command.IsVaild())
-            {
                 throw new Exception(command.GetErrors(""));
-            }
+
+            //登录
+            var res = await adminLoginAppService.Login(command, CancellationToken.None);
 
             return View();
         }

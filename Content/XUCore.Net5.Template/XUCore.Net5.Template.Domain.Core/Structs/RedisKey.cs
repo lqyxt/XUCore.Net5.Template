@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XUCore.Net5.Template.Domain.Common
+namespace XUCore.Net5.Template.Domain.Core
 {
-    public class CacheKey
+    public struct RedisKey
     {
-        public const string AuthTables = "AuthTables";
+        public const string Admin = "Admin";
     }
 }
