@@ -23,7 +23,7 @@ dotnet new -u XUCore.Net5.Template
 
 ```bash
 
-dotnet new --install XUCore.Net5.Template::0.0.2
+dotnet new --install XUCore.Net5.Template::0.0.3
 
 ```
 
